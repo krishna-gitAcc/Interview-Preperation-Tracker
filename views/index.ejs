@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div class="homepage">
+    <%- include('./partials/header.ejs') %>
+
+    <body>
+        <!-- <img src="../public/hbg.jpg" alt=""> -->
+
+
+
+        <%- include('./partials/nav.ejs') %>
+
+        <!-- <SCRIPT>
+            function ShowAndHide() {
+                var x = document.getElementById('blogs');
+                if (x.style.display == 'none') {
+                    x.style.display = 'block';
+                } else {
+                    x.style.display = 'none';
+                }
+            }
+            </SCRIPT> -->
+
+        <!-- <BUTTON ONCLICK="ShowAndHide()">Click me</BUTTON> -->
+        <!-- <DIV ID="blogs" STYLE="display:none"> -->
+        <!-- Text to be shown and hidden -->
+
+
+        <!-- <a href="/">Back</a> -->
+        <h2 style="text-align: center;">Experience is the name everyone gives to their mistakes!</h2>
+        <div class="blogs Content">
+
+            <% if(blogs.length>0){ %>
+            <%  blogs.forEach(blog => {%>
+            <a class="single" href="/blogs/<%= blog._id %>">
+                <h3 class="title"><%= blog.title %></h3>
+                <p class="snipped"> <%= blog.snipped %></p>
+                <!-- <p class="body"> <%= blog.body %></p> -->
+            </a>
+            <%})%>
+            <%} else {%>
+            <p>threere are no blogs.</p>
+            <%}%>
+                    </div>
+                <!-- </DIV> -->
+                    <%- include('./partials/footer.ejs') %>
+    </body>
+</div>
+
+</html>

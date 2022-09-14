@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include('./partials/header.ejs')%>
+<body>
+    <%-include('./partials/nav.ejs') %>
+    
+<div class="content">
+  <div class="create-blog">
+    <form action="blogs" method="POST" >
+      <label for="title">Company Name:</label>
+      <input type="text" id="title" name="title" required>
+      <label for="snipped">Interviewed for :</label>
+      <!-- <input type="text" id="snipped" name="snipped" required> -->
+      <select name="snipped" id="snipped" required>
+        <option value="Internship">Intership</option>
+        <option value="Placement">Placement</option>
+      </select>
+      <label for="Body">Your Experience:</label>
+      <textarea  id="Body" name="body" required></textarea>    
+      <button>Submit</button>  
+    </form>
+</div>  
+</div>
+<%- include('./partials/footer.ejs') %>
+</body>
+</html>
